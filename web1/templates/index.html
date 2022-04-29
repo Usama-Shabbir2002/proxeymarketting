@@ -1,0 +1,139 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commission</title>
+</head>
+
+<style>
+  .input{
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .heading{
+    margin: 0%;
+  }
+
+  .pardiv{
+    border: solid;
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+
+  .child1{
+    background-color: blue;
+    position: relative;
+  }
+
+  
+  .child2{
+    background-color: peru;
+    position: relative;
+  }
+
+
+</style>
+<body>
+
+  <form action="" method="POST">{% csrf_token %}
+   
+    <h5 class="heading"> Boat ID</h5>
+    <input type="text" name="boid" class="input" required>
+
+    <h5 class="heading"> Boat Name</h5>
+    <input type="text" name="boname" class="input" required>
+
+    <h5 class="heading"> Boat Colour</h5>
+    <input type="text" name="bocolour" class="input" required>
+
+    <br>
+    <button type="submit" >
+        Submitt
+    </button>
+
+
+</form>
+
+
+      
+                              <form method="get"> 
+                            <table>
+                                <tr>
+                                  <th>Company</th>
+                                  <th>Contact</th>
+                                  <th>Country</th>
+                                </tr>
+                                {% for item in boats %}
+                                <tr>
+                                  <td>{{ item.bid }}</td>
+                                  <td>{{ item.bname }}</td>
+                                  <td>{{ item.color }}</td>
+                                  
+                                  
+
+                                  
+                                </tr>
+                                {% endfor %}
+                              
+                              </table>
+
+  </form>
+
+
+  <div class="pardiv">
+    
+    <div class="child1">
+      vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+    </div>
+
+    <div class="child2">
+      \vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+
+    </div>
+</div>
+
+
+
+<div>
+    <img class="mySlides" src="{% static 'images/img_snowtops.jpg' %}" width="10%" height="10%" >
+    <img class="mySlides" src="{% static 'images/img_lights.jpg' %}" width="10%" height="10%" >
+    <img class="mySlides" src="{% static 'images/img_mountains.jpg' %}" width="10%" height="10%" >
+    <img class="mySlides" src="{% static 'images/img_forest.jpg' %}" width="10%" height="10%" >
+
+    <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+
+
+
+
+</div>
+</body>
+</html>
+
+<script>
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+</script>

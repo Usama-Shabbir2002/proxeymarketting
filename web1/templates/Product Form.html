@@ -1,0 +1,119 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Form</title>
+    <link rel="stylesheet" href="{% static 'CSS/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/Product.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+</head>
+<body>
+
+
+    <div class="navbar">
+        <div class="container1" id="dropdown">
+            <button class="dropbtn">Menu
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/HomepagePM">Home</a>
+              <a href="/productadd">Product Add</a>
+              <a href="/ProductPM">Products</a>
+              <a href="/OrderPM">Orders</a>
+              <a href="/Commission Sheet PM">Commission</a>
+            
+            </div>
+          </div>
+
+        <div class="container1" id="container1">
+            <li class="inline">    
+                <a href="#">Contact US</a> 
+                
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Sign Up</a>
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Training Guide</a>
+            </li>
+        </div>
+        
+    </div> 
+    <div class="fullpage">
+    <center>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h4 class="heading1"> Product Keyword</h4>
+        <input type="text" class="tetxt" placeholder="e.g keyword . . ." name="Pkw">
+
+
+        
+    <h4 class="heading"> Brand</h4>
+    <input type="text" class="tetxt" name="brand" required placeholder="e.g Brand . . .">
+
+    
+    <h4 class="heading"> Store</h4>
+    <input type="text" class="tetxt" name="store" required placeholder="e.g Store . . .">
+
+    
+    <h4 class="heading"> Commission</h4>
+    <input type="number" class="tetxt" name="comm" required placeholder="e.g Commission . . .">
+    <h4 class="heading"> Total Quantity</h4>
+    <input type="number" class="tetxt" name="Quantity" required placeholder="e.g Total Quantity. . .">
+    <h4 class="heading"> Daily Limit</h4>
+    <input type="number" class="tetxt" name="limit" required placeholder="e.g Daily limit . . .">
+
+    
+    <h4 class="heading"> Market</h4>
+    <input list="Market" name="Market" class="tetxt" placeholder="e.g Market . . .">
+    <datalist id="Market">
+        <select>
+            <option> Germany </option>
+            <option> USA </option>
+            <option> UK </option>
+            <option> Canada </option>
+        </select>
+
+    </datalist>
+
+    <h4 class="heading"> Product Type</h4>
+    <input list="Type" name="Type" class="tetxt" placeholder="e.g Type . . .">
+    <datalist id="Type">
+    <select>
+        <option> Review </option>
+        <option> Rating </option>
+        <option> Feedback </option>
+        <option> Giveaway </option>
+    </select>
+    </datalist>
+
+    <h4 class="heading"> Category </h4>
+    <input list="Category" name="Category" class="tetxt" placeholder="e.g Category . . .">
+    <datalist id="Category">
+    <select>
+        <option> Household </option>
+        <option> Electronics </option>
+        <option> Mobile Accessories </option>
+        <option> Headphones </option>
+        <option> Kitchen </option>
+    </select>
+    </datalist>
+
+    <h4 class="heading">Image Link</h4>
+    <input type="file" name="pimage" class="tetxt" placeholder="e.g Image . . ."><br><br>
+
+    <button class="button" type="submit" >
+        Add Product
+    </button>
+        
+       
+    </form>
+    </center>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+.pardiv1{
+    margin: 3%;
+    display: inline;
+    float: left;
+    width: 40%;
+    box-shadow: 0 0 10px 5px rgb(70, 69, 69);
+    max-height: 100%;
+    height: 60%;
+    
+  }
+.child1
+  {
+    display: inline;
+    float: left;
+    height: 50%;
+    width: 50%;  
+  }
+
+  
+.child2{
+    display: inline;
+    list-style: none;
+    float: left;
+    height: 50%;
+    width: 50%;
+    
+  }
+  .child2 li{
+    padding: 3%;
+  }
+  .inlinep{
+    display: inline;
+    font-size: 150%;
+    
+}
+ 
+.copytoclipboard{
+  margin-left: 75%;
+  margin-top: 2%;
+  padding: 5%;
+  font-size: 200%;
+  color: #3E8DA8;
+  border: none;
+  display: inline;
+    font-size: 150%;
+  
+}
+
+.buttonns{
+  margin: 2%;
+  font-size: 120%;
+  background-color: #3E8DA8;
+  border-radius: 20%;
+}

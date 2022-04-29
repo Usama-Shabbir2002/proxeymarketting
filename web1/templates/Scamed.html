@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <title>Admin Products</title>
+    <link rel="stylesheet" href="{% static 'CSS/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/display.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+
+</head>
+<body>
+<div>
+    <div class="navbar">
+        <div class="container1" id="dropdown">
+            <button class="dropbtn">Menu
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/homepageadmin">Home</a>
+                <a href="/RemovePM">Remove PM</a>
+                <a href="/RemovePMM">Remove PMM</a>
+                <a href="/Mark Scamed">Mark Scamed</a>
+                <a href="/delete Orders">Delete Order</a>            
+            </div>
+          </div>
+
+        <div class="container1" id="container1">
+            <li class="inline">    
+                <a href="#">Contact US</a> 
+                
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Sign Up</a>
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Training Guide</a>
+            </li>
+        </div>
+        
+    </div>   
+    <div class="fullpage">
+        <center>
+    <form method="GET">
+            
+        <h4 class="heading"> Order Number</h4>
+        <input type="integer" class="tetxt" name="ono" required placeholder="e.g Order Number . . .">
+    
+        <br><br>
+        <button type="submit" class="button" >
+            Mark Scammed
+        </button>
+    
+    </form>
+</center>
+</div>
+        
+    
+</div>
+</body>
+</html>

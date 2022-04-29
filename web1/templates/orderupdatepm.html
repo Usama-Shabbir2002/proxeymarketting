@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Form</title>
+    <link rel="stylesheet" href="{% static 'CSS/display.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/Product.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+</head>
+<body>
+
+
+    <div class="navbar">
+        <div class="container1" id="dropdown">
+            <button class="dropbtn">Menu
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/HomepagePM">Home</a>
+              <a href="/productadd">Product Add</a>
+              <a href="/ProductPM">Products</a>
+              <a href="/OrderPM">Orders</a>
+              <a href="/Commission Sheet PM">Commission</a>
+              <a href="ReservationPM">Reservation</a>
+              <a href="User ProfilePM">User Profile</a>
+            
+            </div>
+          </div>
+
+        <div class="container1" id="container1">
+            <li class="inline">    
+                <a href="#">Contact US</a> 
+                
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Sign Up</a>
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Training Guide</a>
+            </li>
+        </div>
+        
+    </div> 
+
+<div class="fullpage">
+    <center>
+    <form method="GET">
+            
+        <h4 class="heading"> Order Number</h4>
+        <input type="integer" class="tetxt" name="Onumber" required placeholder="e.g Order Number . . .">
+    
+        <br><br>
+        <button type="submit" class="button" >
+            GET Order
+        </button>
+    
+    </form>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h4 class="heading"> Refund Screenshot</h4>
+        <input type="file" class="tetxt" name="Rfscreenshot" >
+    
+    
+    
+    <br>
+        <button type="submit" class="button" >
+            Update Order
+        </button>
+    
+    </form>
+    </center>
+    </div>
+    
+
+
+
+{% for item in orders %}
+
+    <div class="pardiv1">
+    
+        <div class="child1">
+            {% if item.Refundimage %}
+                <img src="{{ item.Refundimage.url }}" alt="" class="productimage" width="100%" height="110%">
+                {% elif item.Reviewimage %}
+                <img src="{{ item.Reviewimage.url }}" alt="" class="productimage" width="100%" height="110%">
+                
+                {% elif item.orderimage %}
+                <img src="{{ item.orderimage.url }}" alt="" class="productimage" width="100%" height="110%">
+                
+                   
+            {% endif %}
+
+        </div>
+
+        <div class="child2" id="copieddata">
+            <button class="copytoclipboard" onclick="myFunction('copieddata')">
+                <i class="fa fa-clone"></i>
+            </button><br>
+            <h5 class="inlinep">Order No:</h5> <li class="inlinep">{{item.orderno}}</li><br>
+            <h5 class="inlinep">PayPal: </h5><li class="inlinep">{{item.paypal}}</li><br>
+            <h5 class="inlinep">Order Status: </h5><li class="inlinep">{{item.status}}</li><br>
+            
+            <form action="Order Update PM" method="GET">
+                {% csrf_token %}
+                <button type="submit" class="buttonns">
+                    Update Order
+                </button>
+            </form>
+            
+        </div>
+        
+    </div>
+    
+
+
+{% endfor %}
+
+
+</body>
+</html>

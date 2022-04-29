@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commission PM</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="{% static 'CSS/display.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/Product.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+</head>
+<body>
+
+
+    <div class="navbar">
+        <div class="container1" id="dropdown">
+            <button class="dropbtn">Menu
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/HomepagePM">Home</a>
+              <a href="/productadd">Product Add</a>
+              <a href="/ProductPM">Products</a>
+              <a href="/OrderPM">Orders</a>
+              <a href="/Commission Sheet PM">Commission</a>
+            
+            </div>
+          </div>
+
+        <div class="container1" id="container1">
+            <li class="inline">    
+                <a href="#">Contact US</a> 
+                
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Sign Up</a>
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Training Guide</a>
+            </li>
+        </div>
+        
+    </div> 
+    <div class="fullpage">
+        <form method="get">
+            <center>
+            <h4 class="heading1"> Date From</h4>
+            <input type="date" name="datefrom" class="tetxt" placeholder=" e.g Date From . . .">
+        
+            <h4 class="heading"> Date To</h4>
+            <input type="date" name="dateto" class="tetxt" placeholder="e.g Date To . . .">
+    
+            <br><br>
+        
+            <button type="submit" class="button">
+                Submitt
+            </button>
+            
+        </center>
+        </form>
+
+    </div>
+
+    {% for item in commission %}
+
+    <div class="pardiv1">
+    
+
+        <div class="child2" id="copieddata">
+            <button class="copytoclipboard" onclick="myFunction('copieddata')">
+                <i class="fa fa-clone"></i>
+            </button><br>
+            <h5 class="inlinep">Order Number:</h5> <li class="inlinep">{{item.orderno}}</li><br>
+            <h5 class="inlinep">PayPal: </h5><li class="inlinep">{{item.paypal}}</li><br>
+            <h5 class="inlinep">Commission: </h5><li class="inlinep">{{item.commissionnn}}</li><br>
+            <h5 class="inlinep">Date:</h5> <li class="inlinep">{{item.date}}</li><br>
+            
+            
+        </div>
+        
+    </div>
+    
+
+
+{% endfor %}
+
+    
+</body>
+</html>

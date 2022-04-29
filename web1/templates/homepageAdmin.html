@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <title>homepage</title>
+    <link rel="stylesheet" href="{% static 'CSS/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+
+</head>
+<body>
+<div>
+    <div class="navbar">
+        <div class="container1" id="dropdown">
+            <button class="dropbtn">Menu
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/homepageadmin">Home</a>
+              <a href="/RemovePM">Remove PM</a>
+              <a href="/RemovePMM">Remove PMM</a>
+              <a href="/delete Orders">Delete Order</a>          
+            </div>
+          </div>
+
+        <div class="container1" id="container1">
+            <li class="inline">    
+                <a href="#">Contact US</a> 
+                
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Sign Up</a>
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Training Guide</a>
+            </li>
+        </div>
+        
+    </div>   
+    
+    
+    <div class="container">
+    
+        <div class="div21">
+            Total Orders 
+
+        </div>
+        <div class="div21">
+            Total Reviewed
+        </div>
+        <div class="div21">
+            Total Refunded
+        </div>
+        <div class="div21">
+            Total Commissioned
+        </div>
+        <div class="div21">
+            Total Scammed
+        </div>
+    </div>
+    
+        
+    
+</div>
+</body>
+</html>

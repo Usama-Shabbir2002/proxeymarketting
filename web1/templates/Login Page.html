@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container1" id="container1">
+            <li class="inline">    
+                <a href="#">Contact US</a>
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Sign Up</a>
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a href="#">Training Guide</a>
+            </li>
+        </div>
+      </nav>
+   
+<div class='Full_Page' >
+    
+    <form action="/Homepage" method="get">
+        <center>
+            <img class="lgo" src="{% static 'images/logo.jpg' %}" width="10%" height="10%" >
+            
+            <div class="input">
+                User Name :
+                <input type="text" name="username" class="textarea"><br>
+                <br>
+                Password   &nbsp &nbsp:
+                <input type="text" name="Password" class="textarea">
+            </div>
+            <div class="cbox">
+                
+                <input type="checkbox"  name="user" value="PMM" id="PMM">
+                <label for="PMM"> PMM </label>
+                <input type="checkbox" name="user" value="PM" id="PM">
+                <label for="PM"> PM </label>
+                <input type="checkbox" name="user" value="Admin" id="Admin">
+                <label for="Admin"> Admin </label>
+            </div>
+            
+            
+            <button type="submit" class="SButton" >
+                Login
+            </button>
+            
+            <DIV>
+                <a href="https://web.facebook.com/groups/278038200388461/"> 
+                <img src="{% static 'images/facebook.jpg' %}" width="5%" height="4.5%" alt="facebook" class="Button" ></a>
+                <img src="{% static 'images/Whatsapp.jpg' %}" width="5.75%" height="7%" alt="Whatsapp" class="Button" >
+                <img src="{% static 'images/insta.webp' %}" width="5%" height="4.5%" alt="Instagrame" class="Button" >
+            </DIV>
+            
+            <div class="copyright">
+                Created By: Usama Shabbir<br>
+                Copyrights by Usama Shabbir
+            </div>
+        </center>
+    </form>
+
+</div>
+
+
+</body>
+</html>

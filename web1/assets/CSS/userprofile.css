@@ -1,0 +1,20 @@
+.inline12{
+    margin: 2%;
+    display: inline;
+}
+
+.lists{
+    margin: 3%;
+}
+
+.full-page{
+    position: sticky;
+    text-align: center;
+    font-style: italic;
+    font-size: 140%;
+    margin-top: 4%;
+}
+
+.nodecor{
+    list-style: none;
+}

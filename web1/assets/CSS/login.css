@@ -1,0 +1,51 @@
+.Button{
+    padding: 1.5%;
+    margin: 1.85%;
+    margin-top: 0%;
+    height: 1%;
+}
+
+.SButton{
+    font-size: 130%;
+    margin-top: 0%;
+    margin-bottom: 1%;
+    height: 1%;
+}
+ .lgo{
+     display: flex;
+     margin-top: 5%;
+     margin-bottom: 3%;
+     height: 12%;
+     width: 12%;
+ }
+ .textarea{
+     font-size: 80%;
+ }
+ .input{
+     margin-top: 4%;
+     font-size: 150%;
+ }
+ .copyright{
+     font-size: 140%;
+    margin: 0 auto;
+     margin-top: 0%;
+ }
+ .copyright:hover{
+    color: blue;
+    margin: 0 auto;
+    margin-top: 0%;
+}
+ .cbox{
+     font-size: 140%;
+     text-align: center;
+     margin-top: 0%;
+     margin-bottom: 2%;
+     padding: 2%;
+ }
+
+
+
+
+
+
+

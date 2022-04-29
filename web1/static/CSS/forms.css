@@ -1,0 +1,45 @@
+.heading1{
+    margin-top: 3%;
+    margin-bottom: 1%;
+    font-size: 140%;
+}
+
+.heading{
+    font-size: 140%;
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+}
+
+.tetxt{
+    
+    font-size: 140%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.fullpage{
+    width: 80%;
+    box-shadow: 0 0 10px 5px rgb(70, 69, 69);
+    margin: auto;
+    border-radius: 3%;
+    margin-top: 5%;
+    font-size: 120%;
+}
+.button{
+    border-radius: 45%;
+    font-size: 140%;
+    margin-bottom: 2%;
+}
+
+.full-page{
+    text-align: center;
+    font-style: italic;
+    font-size: 140%;
+    margin-top: 4%;
+}
+
+#key{
+    margin-bottom: 2%;
+}
+

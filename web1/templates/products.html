@@ -1,0 +1,174 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <title>Products</title>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="{% static 'CSS/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/display.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="container1" id="dropdown">
+            <button class="dropbtn">Menu
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/HomepagePMM">Home</a>
+              <a href="/Product">Products</a>
+              <a href="/Order">Orders</a>
+              <a href="/Commission Sheet">Commission</a>
+              <a href="Reservation">Reservation</a>
+              <a href="User Profile">User Profile</a>
+              <a href="Rules and Regulation">Rules</a>
+            
+            </div>
+          </div>
+
+        <div class="container1" id="container1">
+            <li class="inline">    
+                <a href="#">Contact US</a> 
+                
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Sign Up</a>
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Training Guide</a>
+            </li>
+        </div>
+        
+    </div>    
+<div class="fullpage">
+<form method="GET">
+    <center>
+    <h4 class="heading1"> Product Id</h4>
+    <input type="integer" name="Pid" class="tetxt" placeholder=" e.g Product ID . . .">
+
+    <h4 class="heading"> Product Keyword</h4>
+    <input type="text" name="Pkw" class="tetxt" placeholder="e.g keyword . . .">
+
+    <h4 class="heading"> Product Assign</h4>
+    <input type="integer" name="Passign" class="tetxt" placeholder=" e.g Assign . . .">
+
+    <h4 class="heading"> Market</h4>
+    <input list="Market" name="Market" class="tetxt" placeholder="e.g USA . . . ">
+    <datalist id="Market">
+        <select>
+            <option> Germany </option>
+            <option> USA </option>
+            <option> UK </option>
+            <option> Canada </option>
+        </select>
+
+    </datalist>
+
+    <h4 class="heading"> Product Type</h4>
+    <input list="Type" name="Type" class="tetxt" placeholder="e.g Review . . .">
+    <datalist id="Type">
+    <select>
+
+        <option> Review </option>
+        <option> Rating </option>
+        <option> Feedback </option>
+        <option> Giveaway </option>
+    </select>
+    </datalist>
+
+    <h4 class="heading"> Category </h4>
+    <input list="Category" name="Category" class="tetxt" placeholder="e.g Electronics . . .">
+    <datalist id="Category">
+    <select>
+        <option> Household </option>
+        <option> Electronics </option>
+        <option> Mobile Accessories </option>
+        <option> Headphones </option>
+        <option> Kitchen </option>
+    </select>
+    </datalist>
+    <br><br>
+
+    <button type="submit" class="button">
+        Submitt
+    </button>
+    
+</center>
+</form>
+</div>
+
+{% for item in products %}
+
+    <div class="pardiv1">
+    
+        <div class="child1">
+            {% if item.image %}
+                <img src="{{ item.image.url }}" alt="" class="productimage" width="100%" height="110%">
+            
+            {% endif %}
+
+        </div>
+
+        <div class="child2" id="copieddata">
+            <button class="copytoclipboard" onclick="myFunction('copieddata')">
+                <i class="fa fa-clone"></i>
+            </button><br>
+            <h5 class="inlinep">Product ID:</h5> <li class="inlinep">{{item.id}}</li><br>
+            <h5 class="inlinep">Keyword: </h5><li class="inlinep">{{item.keyword}}</li><br>
+            <h5 class="inlinep">Brand: </h5><li class="inlinep">{{item.brand}}</li><br>
+            <h5 class="inlinep">Store:</h5> <li class="inlinep">{{item.store}}</li><br>
+            <h5 class="inlinep">Daily Limit: </h5><li class="inlinep">{{item.dailylimit}}</li><br>
+            <h5 class="inlinep">Country: </h5><li class="inlinep">{{item.country}}</li><br>
+            <form action="">
+                <button type="submit" class="buttonns" >
+                    View product
+                </button>
+            </form>
+            
+            <form action="" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="buttonns">
+                    Reserve
+                </button>
+            </form>
+            
+        </div>
+        
+    </div>
+    
+
+
+{% endfor %}
+
+
+
+</body>
+</html>
+<script>
+function myFunction(copieddata) {
+  if (document.selection) {
+    var range = document.body.createTextRange();
+    range.moveToElementText(document.getElementById(copieddata));
+    range.select().createTextRange();
+    document.execCommand("copy");
+  } else if (window.getSelection) {
+    var range = document.createRange();
+    range.selectNode(document.getElementById(copieddata));
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    alert("Text has been copied, now paste in the text-area")
+  }
+}
+</script>
+{% endblock content %}
+

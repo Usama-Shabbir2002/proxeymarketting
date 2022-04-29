@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'CSS/userprofile.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/homepage.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container1" id="dropdown">
+            <button class="dropbtn">Menu
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/HomepagePMM">Home</a>
+              <a href="/Product">Products</a>
+              <a href="/Order">Orders</a>
+              <a href="/Commission Sheet">Commission</a>
+              <a href="Reservation">Reservation</a>
+              <a href="User Profile">User Profile</a>
+              <a href="Rules and Regulation">Rules</a>
+            
+            </div>
+          </div>
+
+        <div class="container1" id="container1">
+            <li class="inline">    
+                <a href="#">Contact US</a> 
+                
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Sign Up</a>
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Training Guide</a>
+            </li>
+        </div>
+        
+    </div>   
+    
+    <div class="full-page">
+        <h2>User Profile</h2> 
+    </div>
+    {% for item in profile %}
+    <div>
+        <ul>
+            <li class="lists"> <h3 class="inline12">Name.</h3>{{item.name}}</li>
+            <li class="lists"> <h3 class="inline12">PMM ID.</h3>{{item.id}}</li>
+            <li class="lists"> <h3 class="inline12">Phone Number.</h3> {{item.phoneno}} </li>
+            <li class="lists"> <h3 class="inline12">Bank Account Name.</h3> {{item.bankname}}</li>
+
+            <li class="lists"> <h3 class="inline12">Bank Account Number.</h3>{{item.accno}}</li>
+
+            <li class="lists"> <h3 class="inline12">Account Holder Name.</h3> {{item.accholdername}}</li>
+
+            <li class="lists"> <h3 class="inline12">Total Number of Orders Placed.</h3> Here Total Number of order Placed comes from Database</li>
+
+            <li class="lists"> <h3 class="inline12">Total Number of Orders Reviewed.</h3> Here Total Number of order Reviewed comes from Database</li>
+
+            <li class="lists"> <h3 class="inline12">Total Number of Orders Refunded.</h3> Here Total Number of order Refunded comes from Database</li>
+
+            <li class="lists"> <h3 class="inline12">Total Number of Orders Completed.</h3> Here Total Number of order Completed comes from Database</li>
+
+
+
+        </ul>
+
+
+
+    </div>
+    {% endfor %}
+
+
+</body>
+</html>

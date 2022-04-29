@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="{% static 'CSS/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="container1" id="dropdown">
+            <button class="dropbtn">Menu
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/HomepagePMM">Home</a>
+              <a href="/Product">Products</a>
+              <a href="/Order">Orders</a>
+              <a href="/Commission Sheet">Commission</a>
+              <a href="Reservation">Reservation</a>
+              <a href="User Profile">User Profile</a>
+              <a href="Rules and Regulation">Rules</a>
+            
+            </div>
+          </div>
+
+        <div class="container1" id="container1">
+            <li class="inline">    
+                <a href="#">Contact US</a> 
+                
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Sign Up</a>
+            </li>
+            <li class="inline">|</li>
+            <li class="inline">
+                <a  href="#">Training Guide</a>
+            </li>
+        </div>
+        
+    </div> 
+
+    <div class="fullpage">
+        <center>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h4 class="heading1"> PayPal</h4>
+    <input type="text" class="tetxt" name="PayPal" required placeholder="e.g PayPal . . .">
+
+    <h4 class="heading"> Order Number</h4>
+    <input type="text" class="tetxt" name="Onumber" required placeholder="e.g Order Number . . .">
+
+    <h4 class="heading">Status</h4>
+    <input list="status" name="status" class="tetxt" placeholder="e.g Ordered . . .">
+    <datalist id="status">
+    <select>
+
+        <option> Ordered </option>
+        <option> Reviewed </option>
+    </select>
+    </datalist>
+
+    <h4 class="heading"> Order Screenshot</h4>
+    <input type="file" class="tetxt" name="Oscreenshot" >
+
+
+
+<br>
+    <button type="submit" class="button" >
+        Submitt
+    </button>
+
+</form>
+</center>
+</div>
+</body>
+</html>
